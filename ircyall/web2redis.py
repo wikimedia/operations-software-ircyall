@@ -15,6 +15,8 @@ def send():
         return 'No channels found', 400
     if not 'token' in request.form:
         return 'No token found', 400
+    if message.startswith('/'):
+        return 'Message starts with /, not going to process', 400
     data = {
         'message': request.form['message'],
         'channels': request.form.getlist('channels')
