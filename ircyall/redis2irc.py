@@ -33,7 +33,6 @@ class Redis2Irc(irc3.IrcBot):
                 self.log.info("...restarting Redis listener in a few seconds.")
             yield from asyncio.sleep(5)
 
-
     @asyncio.coroutine
     def process_message(self):
         # Create connection
